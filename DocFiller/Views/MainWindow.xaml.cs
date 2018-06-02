@@ -258,12 +258,14 @@ namespace DocFiller.Views
 
             foreach (string groupName in currentProjectModel.templateGroups)
             {
+                bool checkElementExistence = false;
+
                 infoGrid.RowDefinitions.Add(new RowDefinition());
                 TextBlock groupBlock = new TextBlock()
                 {
                     Text = groupName,
                     MinWidth = 25,
-                    HorizontalAlignment = HorizontalAlignment.Center
+                    HorizontalAlignment = HorizontalAlignment.Center,
                 };
                 groupBlock.Padding = defaultThickness;
                 infoGrid.Children.Add(groupBlock);
@@ -276,12 +278,15 @@ namespace DocFiller.Views
                         continue;
                     }
 
+                    checkElementExistence = true;
+
                     infoGrid.RowDefinitions.Add(new RowDefinition());
                     TextBlock textBlock = new TextBlock()
                     {
                         Text = pair.Value,
                         MinWidth = 25,
-                        HorizontalAlignment = HorizontalAlignment.Left
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        FontWeight = FontWeights.DemiBold
                     };
                     textBlock.Padding = defaultThickness;
                     infoGrid.Children.Add(textBlock);
@@ -290,7 +295,8 @@ namespace DocFiller.Views
                     infoGrid.RowDefinitions.Add(new RowDefinition());
                     TextBox textBox = new TextBox()
                     {
-                        MinWidth = 200
+                        MinWidth = 200,
+                        FontWeight = FontWeights.Regular
                     };
                     markValueRefs.Add(pair.Key, textBox);
                     textBox.Margin = defaultThickness;
@@ -324,11 +330,18 @@ namespace DocFiller.Views
                     auxiliaryRefs.Add(pair.Key, checkBox);
                 }
 
-                infoGrid.RowDefinitions.Add(new RowDefinition());
-                Separator groupSeparator = new Separator();
-                infoGrid.Children.Add(groupSeparator);
-                groupSeparator.Margin = new Thickness(5, 10, 5, 10);
-                Grid.SetRow(groupSeparator, rowNumber++);
+                if (checkElementExistence)
+                {
+                    infoGrid.RowDefinitions.Add(new RowDefinition());
+                    Separator groupSeparator = new Separator();
+                    infoGrid.Children.Add(groupSeparator);
+                    groupSeparator.Margin = new Thickness(5, 10, 5, 10);
+                    Grid.SetRow(groupSeparator, rowNumber++);
+                }
+                else
+                {
+                    infoGrid.Children.Remove(groupBlock);
+                }
             }
 
             infoGrid.RowDefinitions.Add(new RowDefinition());
@@ -345,7 +358,8 @@ namespace DocFiller.Views
             TextBox outputDocPath = new TextBox()
             {
                 MinWidth = 200,
-                HorizontalAlignment = HorizontalAlignment.Stretch
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                FontWeight = FontWeights.Regular
             };
             auxiliaryRefs.Add("outputDocPath", outputDocPath);
             infoGrid.Children.Add(outputDocPath);
@@ -398,7 +412,10 @@ namespace DocFiller.Views
                 openedProjectDictWordStorage.Add(projectFilePath, dictWord);
             }
 
-            openedProjectTabControl.Items.Add(new TabItem() { Header = currentProjectModel.name, Content = infoGrid, Uid = projectFilePath });
+            openedProjectTabControl.Items.Add(new TabItem() {
+                Header = currentProjectModel.name,
+                Content = infoGrid,
+                Uid = projectFilePath, FontWeight = FontWeights.SemiBold });
             openedProjectTabControl.SelectedIndex = openedProjectTabControl.Items.Count - 1;
             openedProjectTabControl.Visibility = Visibility.Visible;
         }

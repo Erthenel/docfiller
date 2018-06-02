@@ -33,7 +33,6 @@ namespace DocFiller.Views.Creation
                 Close();
                 Owner.Close();
                 Owner.Owner.Close();
-
                 projectModel.openProjectDelegate(projectArchiveName);
             }
             else

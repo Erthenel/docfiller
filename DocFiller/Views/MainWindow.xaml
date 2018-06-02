@@ -1,0 +1,36 @@
+﻿<Window x:Class="DocFiller.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocFiller.Views"
+        mc:Ignorable="d"
+        Title="DocFiller" Height="350" Width="525" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Background="LightGray">
+            <Menu x:Name="menu">
+                <MenuItem Header="Проект">
+                    <MenuItem Header="Новый" Click="CreateNewProjectMethod"/>
+                    <MenuItem Header="Открыть" Click="OpenProjectMethod"/>
+                    <MenuItem Header="Сохранить" Click="SaveProjectMethod"/>
+                    <MenuItem Header="Закрыть" Click="СloseCurrentProjectMethod"/>
+                    <Separator/>
+                    <MenuItem Header="Выйти" Click="ExitApplicationMethod"/>
+                </MenuItem>
+                <MenuItem Header="?">
+                    <MenuItem Header="О программе" Click="OpenAboutMethod"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel Grid.Row="1" >
+                <TabControl x:Name="openedProjectTabControl" Visibility="Hidden"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

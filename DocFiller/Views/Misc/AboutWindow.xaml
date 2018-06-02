@@ -1,0 +1,17 @@
+﻿<Window x:Class="DocFiller.Views.Misc.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocFiller.Views.Misc"
+        mc:Ignorable="d"
+        Title="DocFiller - О программе" Height="300" Width="277.748" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <TextBlock x:Name="textBlock1"
+                   HorizontalAlignment="Left" Margin="23,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226"><Run Text="DocFiller - бесплатная утилита для быстрой замены слов в шаблонах документов MS Word "/><Run Text="с помощью "/><Run Text="закладок"/><Run Text=". На основе"/><Run Text=" одного или нескольких"/><Run Text=" шаблон"/><Run Text="ов"/><Run Text=" "/><Run Text="создаётся файл проекта, который включает настройки программы и копию сам"/><Run Text="их"/><Run Text=" шаблон"/><Run Text="ов"/><Run Text=". Файл проекта необходим для открытия сеанса работы программы. Поддерживается одновременная работа с несколькими файлами проектов."/></TextBlock>
+
+        <TextBlock x:Name="textBlock3" Margin="56,246,48.5,0.5" TextWrapping="Wrap"><Run Text="Текущая версия - v0.1"/><Run Text=" ("/><Run Text="2018"/><Run Text=")"/></TextBlock>
+        <TextBlock x:Name="textBlock4" Margin="95,225,0,0" TextWrapping="Wrap" Text="evygen@ya.ru" VerticalAlignment="Top" RenderTransformOrigin="0.583,-0.376" HorizontalAlignment="Left" Width="89"/>
+
+    </Grid>
+</Window>

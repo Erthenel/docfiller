@@ -1,0 +1,23 @@
+﻿<Window x:Class="DocFiller.Views.Creation.Step2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocFiller.Views.Creation"
+        mc:Ignorable="d"
+        Title="Создание нового проекта - Шаг 2" Height="300" Width="455.821" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Background="WhiteSmoke">
+        <TextBlock x:Name="textBlock" Margin="55,10,55,0" TextWrapping="Wrap" Text="Вы можете указать полные имена для найденных закладок 
+(по умолчанию будут использованы имена из шаблона):" VerticalAlignment="Top"/>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" 
+                      Margin="55,54,0,62.5" HorizontalAlignment="Left">
+            <WrapPanel x:Name="infoWrapPanel" Height="Auto"  Width="350" />
+        </ScrollViewer>
+
+        <Separator HorizontalAlignment="Left" Height="100" Margin="0,172,0,0" VerticalAlignment="Top" Width="450"/>
+
+        <Button x:Name="returnButton" Content="Назад" Margin="212,0,0,9.5" Click="returnButton_Click" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <Button x:Name="nextButton" Content="Далее" Margin="299,0,0,9.5" Click="nextButton_Click" HorizontalAlignment="Left" Width="75" Height="22" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

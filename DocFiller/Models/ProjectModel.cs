@@ -15,10 +15,10 @@ namespace DocFiller.Models
         public HashSet<string> templatePaths;
         public string templatePathText;
 
-        public List<string> templateGroups = new List<string>() { "Общие закладки"};
-        public Dictionary<string, string> templateMarkSpecGroup = new Dictionary<string, string>();
+        public List<string> templateGroups;
+        public Dictionary<string, string> templateMarkSpecGroup;
 
-        public Dictionary<string, string> templateMarks = new Dictionary<string, string>();
+        public Dictionary<string, string> templateMarks;
 
         public delegate void ProjectOpenFunctionDelegate(string projectFilePath);
 

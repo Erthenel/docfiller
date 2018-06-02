@@ -39,6 +39,9 @@ namespace DocFiller.Views.Creation
             projectModel.templatePathText = templatePathTextBox.Text.Trim();
             projectModel.templatePaths = new HashSet<string>(
                 !projectModel.templatePathText.Equals(string.Empty)? projectModel.templatePathText.Split(';') : new string[0]);
+            projectModel.templateGroups = new List<string>() { "Общие закладки" };
+            projectModel.templateMarkSpecGroup = new Dictionary<string, string>();
+            projectModel.templateMarks = new Dictionary<string, string>();
 
             // TODO: Use another way for validation.
             List<string> errorEntries = new List<string>();
